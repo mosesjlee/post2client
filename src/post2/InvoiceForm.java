@@ -22,6 +22,10 @@ public class InvoiceForm  implements Serializable {
     private String dateAndTime;
     private ArrayList<Product> purchasedProductsList;
 
+    
+    public InvoiceForm(){
+        
+    }
     /**
      * @return the customerName
      */
