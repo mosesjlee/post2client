@@ -8,6 +8,8 @@ package post2;
 import java.util.ArrayList;
 import java.rmi.*;
 import java.rmi.registry.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -140,6 +142,12 @@ public class Post
         invoiceForm.setAmountPaid(mc.getAmountPaidFromPaymentController());
     }
     void addDate(){
-        invoiceForm.setDateAndTime(mc.getDateFromMG());
+        Date curDate = new Date();
+ 
+        SimpleDateFormat format = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
+
+        String DateToStr = format.format(curDate);
+        
+        invoiceForm.setDateAndTime(DateToStr);
     }
 }
