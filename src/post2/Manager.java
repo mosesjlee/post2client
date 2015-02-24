@@ -8,10 +8,11 @@ package post2;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
-public class testClass {
-    public static void main(String args[]){
+public class Manager {
+    public static void main(String args[]) throws Exception{
+        
         Post post = new Post();
         MainFrameController mc = new MainFrameController (post);
         Main_GUI2 mg = new Main_GUI2(mc);
@@ -21,6 +22,7 @@ public class testClass {
         mg.setPaymentGUI(mg.getPaymentGUI());
         mg.setCustomerGUI(mg.getCG());
         mg.setVisible(true);
+        
     }
     
     

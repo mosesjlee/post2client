@@ -8,7 +8,7 @@ package post2;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class Customer_GUI extends javax.swing.JPanel {
 
@@ -23,6 +23,9 @@ public class Customer_GUI extends javax.swing.JPanel {
     public Customer_GUI (){}
     public String getCustomerName(){
         return jTextField1.getText();
+    }
+    public void reset(){
+        jTextField1.setText("");
     }
 
     /**

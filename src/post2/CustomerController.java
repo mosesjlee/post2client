@@ -8,7 +8,7 @@ package post2;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class CustomerController 
 {
@@ -29,6 +29,9 @@ public class CustomerController
     }
     public String getCustomerNameFromCG(){
         return cg.getCustomerName();
+    }
+    public void resetCG(){
+        cg.reset();
     }
     
 }

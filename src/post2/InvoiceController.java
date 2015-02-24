@@ -8,7 +8,7 @@ package post2;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class InvoiceController 
 {
@@ -29,6 +29,9 @@ public class InvoiceController
     void setIG (Invoice_GUI ig)
     {
         this.ig = ig;
+    }
+    public void resetIG(){
+        ig.reset();
     }
     
 }

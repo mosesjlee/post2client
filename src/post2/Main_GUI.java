@@ -8,7 +8,7 @@ package post2;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class Main_GUI extends javax.swing.JFrame {
 

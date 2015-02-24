@@ -10,7 +10,7 @@ import java.text.NumberFormat;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class Product_GUI extends javax.swing.JPanel {
 

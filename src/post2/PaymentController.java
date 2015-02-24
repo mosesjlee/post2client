@@ -8,7 +8,7 @@ package post2;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class PaymentController 
 {
@@ -29,6 +29,18 @@ public class PaymentController
     public void setTotalToPaymentGUI (double total)
     {
        pg.setTotal(total);
+    }
+    public void endTransaction(){
+        mc.endTransaction();
+    }
+    public String getAccountNumberFromPaymentGUI(){
+        return pg.getAccountNumber();
+    }
+    public String getPaymentTypeFromPaymentGUI(){
+        return pg.getPaymentType();
+    }
+    public double getAmountPaidFromPaymentGUI(){
+        return pg.getAmountPaid();
     }
     
     

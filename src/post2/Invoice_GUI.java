@@ -10,7 +10,7 @@ import java.text.NumberFormat;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class Invoice_GUI extends javax.swing.JPanel {
    
@@ -58,50 +58,32 @@ public class Invoice_GUI extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         jList4 = new javax.swing.JList(listModel4);
 
-        setBackground(new java.awt.Color(240, 240, 240));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        setForeground(java.awt.Color.black);
 
-        jLabel1.setBackground(new java.awt.Color(240, 240, 240));
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 15)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.black);
         jLabel1.setText("ITEM");
 
-        jList1.setBackground(java.awt.Color.white);
-        jList1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jList1.setForeground(java.awt.Color.black);
         jList1.setModel(listModel1);
         jScrollPane1.setViewportView(jList1);
 
         jLabel2.setBackground(java.awt.Color.white);
         jLabel2.setFont(new java.awt.Font("Courier New", 1, 15)); // NOI18N
-        jLabel2.setForeground(java.awt.Color.black);
         jLabel2.setText("QTY");
 
-        jList2.setBackground(java.awt.Color.white);
-        jList2.setForeground(java.awt.Color.black);
         jList2.setModel(listModel2);
         jScrollPane2.setViewportView(jList2);
 
         jLabel3.setBackground(java.awt.Color.white);
         jLabel3.setFont(new java.awt.Font("Courier New", 1, 15)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.black);
         jLabel3.setText("UNIT_PRICE");
 
-        jList3.setBackground(java.awt.Color.white);
-        jList3.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jList3.setForeground(java.awt.Color.black);
         jList3.setModel(listModel3);
         jScrollPane3.setViewportView(jList3);
 
         jLabel4.setBackground(java.awt.Color.white);
         jLabel4.setFont(new java.awt.Font("Courier New", 1, 15)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.black);
         jLabel4.setText("EXTENDED_PRICE");
 
-        jList4.setBackground(java.awt.Color.white);
-        jList4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jList4.setForeground(java.awt.Color.black);
         jList4.setModel(listModel4);
         jScrollPane4.setViewportView(jList4);
 
@@ -161,6 +143,12 @@ public class Invoice_GUI extends javax.swing.JPanel {
        listModel4.addElement(defaultFormat.format(extendedPrice));
    }
    
+   public void reset(){
+       listModel1.clear();
+       listModel2.clear();
+       listModel3.clear();
+       listModel4.clear();
+   }
    public int getItemListSize()
    {
        return listModel1.getSize();

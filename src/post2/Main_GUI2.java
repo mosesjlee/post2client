@@ -13,7 +13,7 @@ import java.text.NumberFormat;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier and Optimus Prime
  */
 public class Main_GUI2 extends javax.swing.JFrame {
 
@@ -25,6 +25,11 @@ public class Main_GUI2 extends javax.swing.JFrame {
     ProductController prc = new ProductController();
     InvoiceController ic  = new InvoiceController();
     MainFrameController mc;
+            Date curDate = new Date();
+ 
+        SimpleDateFormat format = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
+
+        String DateToStr = format.format(curDate);
     public Main_GUI2 (){}
     public Main_GUI2(MainFrameController mc) {
         this.mc = mc;
@@ -53,6 +58,14 @@ public class Main_GUI2 extends javax.swing.JFrame {
        NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
        jLabel2.setText(defaultFormat.format(total));
    }
+   public String getDate(){
+       return timeLabel.getText();
+   }
+   public void reset(){
+       jLabel2.setText("    $0.00");
+       timeLabel.setText("Time: " + DateToStr);
+   }
+   //setting stuff up for customer
    
    /////////////////////////////////////
    // Setting Stuff up for Payment GUI

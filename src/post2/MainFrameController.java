@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class MainFrameController 
 {
@@ -48,8 +48,7 @@ public void getUpcAndQuantityFromPCToPost (String upc,int quant) // Do Calculati
     double total = 234;
     //setInvoiceListFromMCToIC(a,quant,total,total);
     post.addToCustomerProductList(upc,quant);
-    post.addProductToInvoice(upc,quant);
-    
+    post.addProductToInvoice(upc,quant);    
 }
 
 
@@ -61,8 +60,21 @@ public void setInvoiceListFromMCToIC(String itemName, int quantity, double price
     //pc.getUpcAndQuantityFromPRGToPC(itemN,qu );
     ic.setInvoiceListFromICToIG(itemName, quantity, price, extendedPrice);
 }
-public void setMGTotal(double total){
+public void setMGTotal(double total)
+{
     mg.setTotal(total);
+}
+public String getDateFromMG(){
+    return mg.getDate();
+}
+public void resetMG(){
+    mg.reset();
+}
+public void resetCG(){
+    cc.resetCG();
+}
+public void resetIG(){
+    ic.resetIG();
 }
 
 public String getItemNameFromMCToInvoice()
@@ -73,6 +85,12 @@ return "asdf";
 void setIG (Invoice_GUI ig)
 {
     ic.setIG(ig);
+}
+public void endTransaction(){
+    post.endTransaction();
+    resetMG();
+    resetCG();
+    resetIG();
 }
 
 //////////////////////////////
@@ -102,15 +120,23 @@ void setPaymentGUI(Payment_GUI paymentG)
 {
     paymentC.setPaymentGUI(paymentG);
 }
+String getAccountNumberFromPaymentController(){
+    return paymentC.getAccountNumberFromPaymentGUI();
+}
+String getPaymentTypeFromPaymentController(){
+    return paymentC.getPaymentTypeFromPaymentGUI();
+}
+double getAmountPaidFromPaymentController(){
+    return paymentC.getAmountPaidFromPaymentGUI();
+}
 //////////////////////////////////
 // Sending Everything To The POST
 /////////////////////////////////
 
-void sendAllInfoToPost()
+/*void sendAllInfoToPost()
 {
-    getCustomerNameFromCC();
-    
-}
+    getCustomerNameFromCC();   
+}*/
 
 //////////////////////////////////////
 // Setting Things up for Customer GUI
@@ -119,8 +145,9 @@ void setCG(Customer_GUI cg)
 {
     cc.setCG(cg);
 }
-public void getCustomerNameFromCC(){
-    System.out.println(cc.getCustomerNameFromCG());
+public String getCustomerNameFromCC()
+{
+    return cc.getCustomerNameFromCG();
 }
 
 }

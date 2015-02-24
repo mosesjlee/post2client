@@ -15,6 +15,7 @@ import java.text.NumberFormat;
 public class Payment_GUI extends javax.swing.JPanel {
     
     PaymentController paymentC;
+    double total;
 
     /**
      * Creates new form Payment_GUI
@@ -30,8 +31,26 @@ public class Payment_GUI extends javax.swing.JPanel {
       public void setTotal (double total)
     {
         NumberFormat nf = NumberFormat.getCurrencyInstance ();
+        this.total=total;
         jTextField2.setText(nf.format(total));
     }
+      public String getAccountNumber(){
+          return jTextField1.getText();
+      }
+      public void endTransaction(){
+          paymentC.endTransaction();
+      }
+      public String getPaymentType(){
+          return jComboBox1.getSelectedItem().toString();
+      }
+      public double getAmountPaid(){
+          return total;
+      }
+      public void reset(){
+          jTextField1.setText("");
+          jTextField2.setText("");
+          total=0;
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,54 +71,39 @@ public class Payment_GUI extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(240, 240, 240));
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        setForeground(java.awt.Color.black);
 
-        jLabel1.setBackground(new java.awt.Color(240, 240, 240));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setForeground(java.awt.Color.green);
         jLabel1.setText("Payment");
 
-        jLabel2.setBackground(new java.awt.Color(240, 240, 240));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(java.awt.Color.black);
         jLabel2.setText("Payment Type");
 
-        jComboBox1.setBackground(java.awt.Color.white);
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jComboBox1.setForeground(java.awt.Color.black);
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Check", "Credit" , "Cash" }));
 
-        jLabel3.setBackground(new java.awt.Color(240, 240, 240));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.black);
         jLabel3.setText("Account Number");
 
-        jTextField1.setBackground(java.awt.Color.white);
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jTextField1.setForeground(java.awt.Color.black);
         jTextField1.setText("");
 
-        jLabel4.setBackground(new java.awt.Color(240, 240, 240));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.black);
         jLabel4.setText("Amount");
 
-        jTextField2.setBackground(java.awt.Color.white);
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jTextField2.setForeground(java.awt.Color.black);
         jTextField2.setText("");
 
-        jButton1.setBackground(new java.awt.Color(240, 240, 240));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(java.awt.Color.red);
         jButton1.setText("Checkout");
 
-        jButton2.setBackground(new java.awt.Color(240, 240, 240));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(java.awt.Color.green);
         jButton2.setText("PAY");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -152,6 +156,12 @@ public class Payment_GUI extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        endTransaction();
+        reset();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

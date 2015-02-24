@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class ProductController 
 {

@@ -6,23 +6,34 @@
 
 package post2;
 import java.util.ArrayList;
+import java.rmi.*;
+import java.rmi.registry.*;
 
 /**
  *
- * @author Optimus Prime
+ * @author Bryan Chevalier
  */
 public class Post 
 {
-    InvoiceForm invoiceForm = new InvoiceForm();
+    InvoiceForm invoiceForm;
     ArrayList<Product> productList = new ArrayList();
     ArrayList<String> upcList = new ArrayList();
     ArrayList<Product> customerProductList = new ArrayList();
     MainFrameController mc;
+    Boolean inTransaction = true;
     
-    public Post(){
-        productList.add(new Product("1111","eggs",3.40));
-        productList.add(new Product("1112","beer",2.00));
-        productList.add(new Product("1114", "pussy",3.00));
+    public Post() throws Exception{
+        if(System.getSecurityManager() == null)
+            System.setSecurityManager(new SecurityManager());
+        
+        Registry r = LocateRegistry.getRegistry();
+        PostClientServerCommInterface store = 
+                (PostClientServerCommInterface) r.lookup("postComm");
+        invoiceForm = new InvoiceForm();
+        
+        productList = store.getProductListFromHostToClient();
+        
+        
         
     }
     public void addToCustomerProductList(String upc, int quant){
@@ -89,5 +100,37 @@ public class Post
         }
         return -1;
     }
-    
+    public void endTransaction(){
+        addCustomerName();
+        addProductsList();
+        addAccountNumber();
+        addPaymentType();
+        addAmountPaid();
+        addDate();
+        inTransaction=false;//TO DSETHU HERE
+        
+    }
+    public boolean isInTransaction(){
+        return inTransaction;
+    }
+   
+    void addCustomerName()
+    {
+        invoiceForm.setCustomerName(mc.getCustomerNameFromCC());
+    }
+    void addProductsList(){
+        invoiceForm.setPurchasedProductsList(customerProductList);
+    }
+    void addAccountNumber(){
+        invoiceForm.setAccountNumber(mc.getAccountNumberFromPaymentController());
+    }
+    void addPaymentType(){
+        invoiceForm.setPaymentType(mc.getPaymentTypeFromPaymentController());
+    }
+    void addAmountPaid(){
+        invoiceForm.setAmountPaid(mc.getAmountPaidFromPaymentController());
+    }
+    void addDate(){
+        invoiceForm.setDateAndTime(mc.getDateFromMG());
+    }
 }
