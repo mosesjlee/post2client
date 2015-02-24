@@ -30,7 +30,7 @@ public class Post
             System.setSecurityManager(new SecurityManager());
         
         Registry r = LocateRegistry.getRegistry();
-        PostClientServerCommInterface store = 
+         store = 
                 (PostClientServerCommInterface) r.lookup("postComm");
         invoiceForm = new InvoiceForm();
         

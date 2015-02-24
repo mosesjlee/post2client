@@ -13,6 +13,7 @@ package post2;
 public class Manager {
     public static void main(String args[]) throws Exception{
         
+        
         Post post = new Post();
         MainFrameController mc = new MainFrameController (post);
         Main_GUI2 mg = new Main_GUI2(mc);
