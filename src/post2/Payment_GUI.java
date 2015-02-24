@@ -70,10 +70,10 @@ public class Payment_GUI extends javax.swing.JPanel {
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
 
-        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.green);
+        jLabel1.setForeground(new java.awt.Color(0, 102, 51));
         jLabel1.setText("Payment");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -92,7 +92,7 @@ public class Payment_GUI extends javax.swing.JPanel {
         jTextField2.setText("");
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setForeground(java.awt.Color.green);
+        jButton2.setForeground(new java.awt.Color(0, 102, 0));
         jButton2.setText("PAY");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

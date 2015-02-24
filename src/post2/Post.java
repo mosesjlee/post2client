@@ -116,7 +116,8 @@ public class Post
             Logger.getLogger(Post.class.getName()).log(Level.SEVERE, null, ex);
         }
         inTransaction=false;//TO DSETHU HERE
-        
+        customerProductList.clear();
+
     }
     public boolean isInTransaction(){
         return inTransaction;
