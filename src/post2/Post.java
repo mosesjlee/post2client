@@ -8,6 +8,8 @@ package post2;
 import java.util.ArrayList;
 import java.rmi.*;
 import java.rmi.registry.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,6 +23,7 @@ public class Post
     ArrayList<Product> customerProductList = new ArrayList();
     MainFrameController mc;
     Boolean inTransaction = true;
+    PostClientServerCommInterface store;
     
     public Post() throws Exception{
         if(System.getSecurityManager() == null)
@@ -107,6 +110,11 @@ public class Post
         addPaymentType();
         addAmountPaid();
         addDate();
+        try {
+            store.sendInvoiceFormObjectFromClientToHost(invoiceForm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(Post.class.getName()).log(Level.SEVERE, null, ex);
+        }
         inTransaction=false;//TO DSETHU HERE
         
     }
