@@ -10,18 +10,18 @@ package post2;
  *
  * @author Bryan Chevalier
  */
-public class PaymentController 
+public class PaymentPanelController 
 {
-    Payment_GUI pg;
+    Payment_Panel pg;
     MainFrameController mc;
     
-    PaymentController (MainFrameController mc)
+    PaymentPanelController (MainFrameController mc)
     {
         this.mc = mc;
     }
     
     // Setting up the GUI Stuff
-    public void setPaymentGUI(Payment_GUI pg)
+    public void setPaymentGUI(Payment_Panel pg)
     {
      this.pg = pg;
     }

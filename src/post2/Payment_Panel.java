@@ -12,20 +12,21 @@ import java.text.NumberFormat;
  *
  * @author Optimus Prime
  */
-public class Payment_GUI extends javax.swing.JPanel {
+public class Payment_Panel extends javax.swing.JPanel {
     
-    PaymentController paymentC;
+    PaymentPanelController paymentC;
     double total;
 
     /**
      * Creates new form Payment_GUI
      */
-    public Payment_GUI(){
+    public Payment_Panel(){
         
     }
-    public Payment_GUI(PaymentController v) {
+    
+    public Payment_Panel (PaymentPanelController v)
+    {
         this.paymentC = v;
-        initComponents();
     }
     
       public void setTotal (double total)
@@ -70,7 +71,7 @@ public class Payment_GUI extends javax.swing.JPanel {
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
 
-        setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 51));

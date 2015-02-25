@@ -10,20 +10,20 @@ package post2;
  *
  * @author Bryan Chevalier
  */
-public class CustomerController 
+public class CustomerPanelController 
 {
     
     MainFrameController mc;
-    Customer_GUI cg;
+    Customer_Panel cg;
     
-    CustomerController(){}
+    CustomerPanelController(){}
     
-    CustomerController (MainFrameController mc)
+    CustomerPanelController (MainFrameController mc)
     {
         this.mc = mc;
     }
     
-    void setCG(Customer_GUI cg)
+    void setCG(Customer_Panel cg)
     {
         this.cg = cg;
     }

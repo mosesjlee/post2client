@@ -10,13 +10,13 @@ package post2;
  *
  * @author Bryan Chevalier
  */
-public class InvoiceController 
+public class InvoicePanelController 
 {
     MainFrameController mc;
-    Invoice_GUI ig;
+    Invoice_Panel ig;
     
-    InvoiceController(){}
-    InvoiceController(MainFrameController m)
+    InvoicePanelController(){}
+    InvoicePanelController(MainFrameController m)
     {
         this.mc = m;
     }
@@ -26,7 +26,7 @@ public class InvoiceController
          ig.setInvoiceItemListFromIC(itemName, quantity, price, extendedPrice);
     }
     
-    void setIG (Invoice_GUI ig)
+    void setIG (Invoice_Panel ig)
     {
         this.ig = ig;
     }

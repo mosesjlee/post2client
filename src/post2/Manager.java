@@ -16,7 +16,7 @@ public class Manager {
         
         Post post = new Post();
         MainFrameController mc = new MainFrameController (post);
-        Main_GUI2 mg = new Main_GUI2(mc);
+        Main_Panel mg = new Main_Panel(mc);
         post.setMC(mc);
         mg.setIG(mg.getIG());
         mg.setMG(mg);

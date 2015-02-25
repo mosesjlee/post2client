@@ -16,12 +16,12 @@ public class MainFrameController
 {
 // Variables...
 Post post;
-ProductController pc = new ProductController(this);
-InvoiceController ic = new InvoiceController(this);
-PaymentController paymentC = new PaymentController (this);
-CustomerController cc = new CustomerController(this);
+ProductPanelController pc = new ProductPanelController(this);
+InvoicePanelController ic = new InvoicePanelController(this);
+PaymentPanelController paymentC = new PaymentPanelController (this);
+CustomerPanelController cc = new CustomerPanelController(this);
 
-Main_GUI2 mg;
+Main_Panel mg;
 String itemN;
 int qu;
 double pr;
@@ -82,7 +82,7 @@ public String getItemNameFromMCToInvoice()
 return "asdf";            
 }
 
-void setIG (Invoice_GUI ig)
+void setIG (Invoice_Panel ig)
 {
     ic.setIG(ig);
 }
@@ -97,7 +97,7 @@ public void endTransaction(){
 // Setting The Main_GUI stuff
 /////////////////////////////
 
-public void setMG (Main_GUI2  mg)
+public void setMG (Main_Panel  mg)
 {
     this.mg = mg;
 }
@@ -116,7 +116,7 @@ void setTotalFromMCToPaymentController (double total)
     paymentC.setTotalToPaymentGUI(total);
 }
 
-void setPaymentGUI(Payment_GUI paymentG)
+void setPaymentGUI(Payment_Panel paymentG)
 {
     paymentC.setPaymentGUI(paymentG);
 }
@@ -141,7 +141,7 @@ double getAmountPaidFromPaymentController(){
 //////////////////////////////////////
 // Setting Things up for Customer GUI
 /////////////////////////////////////
-void setCG(Customer_GUI cg)
+void setCG(Customer_Panel cg)
 {
     cc.setCG(cg);
 }

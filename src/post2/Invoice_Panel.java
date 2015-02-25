@@ -12,18 +12,18 @@ import java.text.NumberFormat;
  *
  * @author Bryan Chevalier
  */
-public class Invoice_GUI extends javax.swing.JPanel {
+public class Invoice_Panel extends javax.swing.JPanel {
    
     /**
      * Creates new form Invoice_GUI
      */
-    InvoiceController ic;
+    InvoicePanelController ic;
     javax.swing.DefaultListModel listModel1;
     javax.swing.DefaultListModel listModel2;
     javax.swing.DefaultListModel listModel3;
     javax.swing.DefaultListModel listModel4;
 
-    public Invoice_GUI(InvoiceController ic) 
+    public Invoice_Panel(InvoicePanelController ic) 
     {
         this.ic = ic;
         listModel1 = new javax.swing.DefaultListModel();

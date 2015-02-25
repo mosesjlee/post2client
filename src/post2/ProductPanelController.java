@@ -12,14 +12,14 @@ import java.util.ArrayList;
  *
  * @author Bryan Chevalier
  */
-public class ProductController 
+public class ProductPanelController 
 {
     
     MainFrameController mc; // Communicates with MainFrameController
     
-    ProductController (){}
+    ProductPanelController (){}
     
-    ProductController(MainFrameController mc)
+    ProductPanelController(MainFrameController mc)
     {
         this.mc = mc;
     }

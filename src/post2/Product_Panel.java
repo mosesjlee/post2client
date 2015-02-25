@@ -12,13 +12,13 @@ import java.text.NumberFormat;
  *
  * @author Bryan Chevalier
  */
-public class Product_GUI extends javax.swing.JPanel {
+public class Product_Panel extends javax.swing.JPanel {
 
     /**
      * Creates new form Product_GUI
      */
-    ProductController prc;
-    public Product_GUI(ProductController p) 
+    ProductPanelController prc;
+    public Product_Panel(ProductPanelController p) 
     { // 
         this.prc = p;
         initComponents();
@@ -40,32 +40,21 @@ public class Product_GUI extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox();
 
-        setBackground(new java.awt.Color(240, 240, 240));
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        setForeground(java.awt.Color.black);
 
-        jLabel1.setBackground(new java.awt.Color(240, 240, 240));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setForeground(java.awt.Color.blue);
         jLabel1.setText("Product");
 
-        jLabel2.setBackground(new java.awt.Color(240, 240, 240));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel2.setForeground(java.awt.Color.black);
         jLabel2.setText("UPC");
 
-        jComboBox1.setBackground(java.awt.Color.white);
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jComboBox1.setForeground(java.awt.Color.black);
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(  prc.getUPCListFromMainFrameToPC().toArray() ));
 
         jLabel3.setBackground(java.awt.Color.white);
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.black);
         jLabel3.setText("Quantity");
 
-        jButton1.setBackground(new java.awt.Color(240, 240, 240));
-        jButton1.setForeground(java.awt.Color.black);
         jButton1.setText("Enter");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,9 +62,6 @@ public class Product_GUI extends javax.swing.JPanel {
             }
         });
 
-        jComboBox2.setBackground(java.awt.Color.white);
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jComboBox2.setForeground(java.awt.Color.black);
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4","5","6","7","8","9","10" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

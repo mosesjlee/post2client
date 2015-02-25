@@ -10,17 +10,17 @@ package post2;
  *
  * @author Bryan Chevalier
  */
-public class Customer_GUI extends javax.swing.JPanel {
+public class Customer_Panel extends javax.swing.JPanel {
 
     /**
      * Creates new form Customer_GUI
      */
-    CustomerController cc;
-    public Customer_GUI(CustomerController cc) {
+    CustomerPanelController cc;
+    public Customer_Panel(CustomerPanelController cc) {
         this.cc = cc;
         initComponents();
     }
-    public Customer_GUI (){}
+    public Customer_Panel (){}
     public String getCustomerName(){
         return jTextField1.getText();
     }

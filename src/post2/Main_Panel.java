@@ -15,23 +15,23 @@ import java.text.NumberFormat;
  *
  * @author Bryan Chevalier and Optimus Prime
  */
-public class Main_GUI2 extends javax.swing.JFrame {
+public class Main_Panel extends javax.swing.JFrame {
 
     /**
      * Creates new form Main_GUI
      */
    //MainFrameController mc = new MainFrameController();
    // mc.getPrc();
-    ProductController prc = new ProductController();
-    InvoiceController ic  = new InvoiceController();
+    ProductPanelController prc = new ProductPanelController();
+    InvoicePanelController ic  = new InvoicePanelController();
     MainFrameController mc;
             Date curDate = new Date();
  
         SimpleDateFormat format = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
 
         String DateToStr = format.format(curDate);
-    public Main_GUI2 (){}
-    public Main_GUI2(MainFrameController mc) {
+    public Main_Panel (){}
+    public Main_Panel(MainFrameController mc) {
         this.mc = mc;
         initComponents();
     }
@@ -39,18 +39,18 @@ public class Main_GUI2 extends javax.swing.JFrame {
     ////////////////////////////////
     // Setting Up Invoice Gui Stuff
     ///////////////////////////////
-      public void setIG(Invoice_GUI ig)
+      public void setIG(Invoice_Panel ig)
     {
         mc.setIG(ig);
     }
     
-    public Invoice_GUI getIG(){return invoice_GUI1;}
+    public Invoice_Panel getIG(){return invoice_GUI1;}
     
     //////////////////////////////////
     // Setting stuff for the Main GUI
     //////////////////////////////////
     
-   void setMG (Main_GUI2 mg)
+   void setMG (Main_Panel mg)
    {
        mc.setMG(mg);
    }
@@ -70,12 +70,12 @@ public class Main_GUI2 extends javax.swing.JFrame {
    /////////////////////////////////////
    // Setting Stuff up for Payment GUI
    ////////////////////////////////////
-   public void setPaymentGUI(Payment_GUI payment_GUI1)
+   public void setPaymentGUI(Payment_Panel payment_GUI1)
    {
        mc.setPaymentGUI(payment_GUI1);
    }
    
-   public Payment_GUI getPaymentGUI()
+   public Payment_Panel getPaymentGUI()
    {
        return payment_GUI1;
    }
@@ -84,12 +84,12 @@ public class Main_GUI2 extends javax.swing.JFrame {
    // Setting up the Customer Stuff
    ////////////////////////////////////
    
-   public void setCustomerGUI (Customer_GUI cg)
+   public void setCustomerGUI (Customer_Panel cg)
    {
        mc.setCG(cg);
    }
    
-   public Customer_GUI getCG ()
+   public Customer_Panel getCG ()
    {
        return customer_GUI1;
    }
@@ -104,10 +104,10 @@ public class Main_GUI2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        product_GUI2 = new post2.Product_GUI(mc.pc);
-        customer_GUI1 = new post2.Customer_GUI(mc.cc);
-        invoice_GUI1 = new post2.Invoice_GUI(mc.ic);
-        payment_GUI1 = new post2.Payment_GUI(mc.paymentC);
+        product_GUI2 = new post2.Product_Panel(mc.pc);
+        customer_GUI1 = new Customer_Panel(mc.cc);
+        invoice_GUI1 = new post2.Invoice_Panel(mc.ic);
+        payment_GUI1 = new post2.Payment_Panel(mc.paymentC);
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         timeLabel = new javax.swing.JLabel();
@@ -208,31 +208,31 @@ public class Main_GUI2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main_GUI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Panel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main_GUI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Panel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main_GUI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Panel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main_GUI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Panel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main_GUI2().setVisible(true);
+                new Main_Panel().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify                     
-    private post2.Customer_GUI customer_GUI1;
-    private post2.Invoice_GUI invoice_GUI1;
+    private Customer_Panel customer_GUI1;
+    private post2.Invoice_Panel invoice_GUI1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private post2.Payment_GUI payment_GUI1;
-    private post2.Product_GUI product_GUI2;
+    private post2.Payment_Panel payment_GUI1;
+    private post2.Product_Panel product_GUI2;
     
     // Adding Our own Code:
     private javax.swing.JLabel timeLabel;
